@@ -1,15 +1,22 @@
 
 --  NETFLIX  --
 
-- Body
-- Header 
-- Login Form
-- Sign Up Form 
-- Form Validation
-- Firebase Setup 
-- Deployed app to Firebase
-- Sign Up User Using Firebase
-- Sign In Using Firebase
-- Created Redux Store
+-> Body
+-> Header 
+-> Login Form
+-> Sign Up Form 
+-> Form Validation
+-> Firebase Setup 
+-> Deployed app to Firebase
+-> Sign Up User Using Firebase
+-> Sign In Using Firebase
+-> Created Redux Store
  
+---- Browse ----
 
+Main Container
+-> VideoBackGround
+-> VideoTitle
+
+Secondary Container
+-> Movie List in Cards
