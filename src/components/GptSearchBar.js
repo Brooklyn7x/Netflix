@@ -20,8 +20,6 @@ const GptSearchBar = () => {
     return json.results;
   };
   const handleGptSearch = async () => {
-    
-
     const query =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -33,7 +31,7 @@ const GptSearchBar = () => {
     // if(!getResults.choices){
 
     // }
-  
+
     const gptMovies = getResults.choices?.[0]?.message.content.split(",");
     const promiseArray = gptMovies.map((movie) => searchMovies(movie));
     const tmdbResults = await Promise.all(promiseArray);
@@ -47,18 +45,18 @@ const GptSearchBar = () => {
 
   return (
     <div
-      className="pt-[10%] flex justify-center  "
+      className=" pt-[10%] md:pt-[10%] flex justify-center  "
       onSubmit={(e) => e.preventDefault()}
     >
-      <form className=" w-1/2 bg-black grid grid-cols-12">
+      <form className="  w-6/6 rounded-lg bg-opacity-70 md: w-1/2 bg-black  grid grid-cols-12 ">
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9"
+          className=" p-2 md:p-4 m-4 col-span-9 rounded-lg bg-gray-400"
           placeholder="Search Something"
         />
         <button
-          className="py-2 px-4 bg-red-700 text-white rounded-lg m-4 col-span-3"
+          className="md:py-2 px-4 bg-red-700 text-white rounded-lg m-4 col-span-3"
           onClick={handleGptSearch}
         >
           Search
