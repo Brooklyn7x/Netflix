@@ -6,6 +6,7 @@ import { json } from "react-router-dom";
 
 const usePopularMovies = () => {
   const dispatch = useDispatch();
+  const popularMovies = useSelector((store) => store.movies.popularMovies);
 
   const getPopularMovies = async () => {
     const data = await fetch(
@@ -13,11 +14,11 @@ const usePopularMovies = () => {
       API_OPTIONS
     );
     const js = await data.json();
-    console.log(js.results);
+
     dispatch(addPopularMovies(js.results));
   };
   useEffect(() => {
-    getPopularMovies();
+    if (!popularMovies) getPopularMovies();
   }, []);
 };
 

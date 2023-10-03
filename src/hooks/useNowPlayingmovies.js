@@ -6,6 +6,9 @@ import { json } from "react-router-dom";
 
 const useNowPlayingmovies = () => {
   const dispatch = useDispatch();
+  const nowPlayingMovies = useSelector(
+    (store) => store.movies.nowPlayingMovies
+  );
 
   const getNowPlayingMovies = async () => {
     const data = await fetch(
@@ -13,11 +16,10 @@ const useNowPlayingmovies = () => {
       API_OPTIONS
     );
     const js = await data.json();
-    console.log(js.results);
     dispatch(addNowPlayingMovie(js.results));
   };
   useEffect(() => {
-    getNowPlayingMovies();
+    if (!nowPlayingMovies) getNowPlayingMovies();
   }, []);
 };
 

@@ -8,6 +8,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { IMG_BG } from "../utils/constants";
 const Loginn = () => {
   const [isSignInForm, setisSignInForm] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
@@ -23,8 +24,7 @@ const Loginn = () => {
 
   const handleButtonClick = () => {
     const msg = checkValidation(email.current.value, password.current.value);
-    console.log(email.current.value);
-    console.log(password.current.value);
+  
     seterrorMessage(msg);
     if (msg) return;
     if (!isSignInForm) {
@@ -80,7 +80,7 @@ const Loginn = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/f85718e8-fc6d-4954-bca0-f5eaf78e0842/ea44b42b-ba19-4f35-ad27-45090e34a897/IN-en-20230918-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={IMG_BG}
           alt="logo"
         />
       </div>
