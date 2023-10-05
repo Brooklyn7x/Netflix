@@ -2,8 +2,8 @@ The MOVIES-GPT App is an AI-driven platform that enhances the Netflix experience
 
 
 🎯 Features
-GPT-Search
-Authentication
-Internationalisation
-TMDB API
-Memoisation
+-> GPT-Search
+->Authentication
+->Internationalisation
+-> TMDB API
+-> Memoisation
